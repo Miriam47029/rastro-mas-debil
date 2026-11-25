@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🛡️%3C/text%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#070a1f" />
+  <title>El Rastro Más Débil · Privacidad para Mortales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="orb pink"></div><div class="orb big"></div>
+
+  <main class="player" id="app" data-state="join">
+    <header>
+      <span class="eyebrow">Privacidad para Mortales</span>
+      <span class="chip hidden" id="meChip"><span class="me" id="meName"></span> · <span class="score" id="meScore">0</span></span>
+    </header>
+
+    <!-- Unirse -->
+    <section class="view join" id="vJoin">
+      <div>
+        <p class="eyebrow">Concurso final</p>
+        <h1 class="title">El rastro<br/>más <em>débil</em></h1>
+      </div>
+      <div class="glass resume hidden" id="resumeBox">
+        <p class="eyebrow">¿Eres tú?</p>
+        <button class="btn" type="button" id="resumeBtn">Continuar como&nbsp;<b id="resumeName"></b></button>
+        <p class="muted" id="resumePts"></p>
+      </div>
+      <form class="glass" id="joinForm" autocomplete="off">
+        <label class="muted" for="nameInput" id="nameLabel">Escribe tu nombre</label>
+        <input id="nameInput" maxlength="20" placeholder="Ej. Daniela R." required />
+        <button class="btn" type="submit" id="joinBtn">Entrar al juego →</button>
+      </form>
+      <p class="rules muted">Cuando aparezca la pregunta, <b>presiona el botón</b>. Quien llegue primero responde en voz alta. Si fallas, el turno pasa a los demás.</p>
+    </section>
+
+    <!-- Juego -->
+    <section class="view hidden" id="vGame">
+      <div class="glass qcard" id="qCard">
+        <p class="eyebrow" id="qMeta">Esperando…</p>
+        <p id="qText">En un momento empieza el concurso. Mira el proyector 👀</p>
+        <ol class="popts hidden" id="qOpts"></ol>
+      </div>
+      <div class="buzzer-wrap">
+        <button class="buzzer" id="buzzer" aria-live="polite"><span id="buzzLabel">ESPERA</span></button>
+      </div>
+      <p class="status" id="status"></p>
+      <div class="glass answer hidden" id="answerBox">
+        <p class="eyebrow">Respuesta</p>
+        <p id="answerText"></p>
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section class="view hidden final-me" id="vFinal">
+      <p class="eyebrow">Fin del concurso</p>
+      <p class="place" id="finalPlace">#1</p>
+      <h2 class="title" style="font-size:2rem" id="finalMsg">¡Bien jugado!</h2>
+      <p class="muted" id="finalScore"></p>
+      <div class="glass mission">
+        <div class="mission-head">
+          <p class="eyebrow">Tu misión de hoy · plan de 5 minutos</p>
+          <span class="chip" id="missionCount">0/5</span>
+        </div>
+        <p class="muted mission-sub">Hazlos ahora con tu celular en la mano y márcalos:</p>
+        <ul class="checklist" id="checklist"></ul>
+      </div>
+    </section>
+
+    <!-- Expulsado -->
+    <section class="view hidden" id="vKicked">
+      <h2 class="title" style="font-size:2rem">Saliste de la <em>sala</em></h2>
+      <p class="muted">El conductor quitó tu nombre. Puedes volver a entrar con tu nombre real.</p>
+      <button class="btn" id="rejoinBtn">Volver a entrar</button>
+    </section>
+  </main>
+  <div class="mode-badge hidden" id="modeBadge">Modo demo local</div>
+
+  <script type="module" src="js/player.js"></script>
+</body>
+</html>

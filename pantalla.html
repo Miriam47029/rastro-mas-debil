@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🛡️%3C/text%3E%3C/svg%3E" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyector · El Rastro Más Débil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="vendor/qrcode.js" defer></script>
+  <script src="vendor/confetti.js" defer></script>
+</head>
+<body>
+  <div class="orb pink"></div><div class="orb lilac"></div><div class="orb big"></div>
+
+  <div class="screen">
+    <header>
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="#fff"/><path d="m8.5 12 2.4 2.4L15.8 9.5" stroke="#070a1f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Privacidad para Mortales
+      </div>
+      <div class="chip" id="hdrInfo"><span class="dotlive"></span> <span id="hdrCount">0</span> conectados</div>
+    </header>
+
+    <div class="stage" id="stage">
+      <section class="main" id="main"></section>
+      <aside class="glass board" id="board"></aside>
+    </div>
+  </div>
+
+  <div class="overlay hidden" id="overlay"><div class="box" id="overlayBox"></div></div>
+
+  <div class="start-gate" id="gate">
+    <div class="glass">
+      <p class="eyebrow">Pantalla del proyector</p>
+      <h1 class="title" style="font-size:2.6rem">El rastro más <em>débil</em></h1>
+      <p class="muted">Haz clic para activar el sonido. Después presiona <b>F</b> para pantalla completa.</p>
+      <button class="btn" id="gateBtn">Iniciar pantalla 🔊</button>
+    </div>
+  </div>
+  <div class="mode-badge hidden" id="modeBadge">Modo demo local</div>
+
+  <script type="module" src="js/screen.js"></script>
+</body>
+</html>
